@@ -1,0 +1,20 @@
+{
+  "name": "mongos0",
+  "components": {
+    "mongos0": {
+      "expose": [
+        {
+          "component": "mongos0/mongod",
+          "target_port": 27017,
+          "port": 27017
+        }
+      ]
+    },
+    "mongos0/mongod": {
+      "image": "mongo:3.0",
+      "entrypoint": "mongos",
+      "args": ["--configdb", "mongod.cfg0.cfg0:27019,mongod.cfg1.cfg1:27019,mongod.cfg2.cfg2:27019"],
+      "ports": 27017
+    }
+  }
+}

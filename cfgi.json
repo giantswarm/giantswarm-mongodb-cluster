@@ -1,0 +1,20 @@
+{
+  "name": "cfg$i",
+  "components": {
+    "cfg$i": {
+      "expose": [
+        {
+          "component": "cfg$i/mongod",
+          "target_port": 27019,
+          "port": 27019
+        }
+      ]
+    },
+    "cfg$i/mongod": {
+      "image": "mongo:3.0",
+      "entrypoint": "sh",
+      "args": ["-c", "mkdir /data/configdb && mongod --configsvr --port 27019"],
+      "ports": 27019
+    }
+  }
+}

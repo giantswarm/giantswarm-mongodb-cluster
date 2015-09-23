@@ -1,0 +1,19 @@
+{
+  "name": "rs$i-$j",
+  "components": {
+    "rs$i-$j": {
+      "expose": [
+        {
+          "component": "rs$i-$j/mongod",
+          "target_port": 27017,
+          "port": 27017
+        }
+      ]
+    },
+    "rs$i-$j/mongod": {
+      "image": "mongo:3.0",
+      "args": ["--noprealloc","--smallfiles","--replSet", "rs$i"],
+      "ports": 27017
+    }
+  }
+}
