@@ -43,6 +43,8 @@ rs.status();
 
 Connect replicasets as shards to cluster:
 ```bash
-sh.addShard( "rs0/mongod.rs0-0.rs0-0.support.activator.gigantic.local:27017" );
-sh.addShard( "rs1/mongod.rs1-0.rs1-0.support.activator.gigantic.local:27017" );
+sh.addShard('rs0/mongod.rs0-0.rs0-0.support.activator.gigantic.local:27017');
+sh.addShard('rs1/mongod.rs1-0.rs1-0.support.activator.gigantic.local:27017');
+ssh.startBalancer();
+sh.status();
 ```
